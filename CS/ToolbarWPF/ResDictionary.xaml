@@ -1,0 +1,125 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                    xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys"
+                    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys"
+                    xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements"
+                    xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v13.1"
+                    xmlns:local="clr-namespace:ToolbarWPF"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <DataTemplate x:Key="dayNameTemplate">
+        <dxe:TextEdit IsPrintingMode="True" Text="{Binding Path=Content, Mode=OneWay}" />
+    </DataTemplate>
+    <DataTemplate x:Key="glyphTemplate">
+        <Image Width="24" Height="24" Source="{Binding ActualGlyph, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dxb:BarItemLinkControl}}"/>
+    </DataTemplate>
+    <DataTemplate x:Key="toolbarCustomization">        
+        <dxb:BarManagerActionContainer>
+            <dxb:UpdateBarItemAction 
+                ItemName="zoomIn" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="zoomOut" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="documentMap" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="parameters" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="search" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="open" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="save" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="print" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="printDirect" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="pageSetup" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="scaling" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="firstPage" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="previousPage" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="nextPage" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="lastPage" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="watermark" 
+                Property="{x:Static dxb:BarButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            
+            <dxb:UpdateBarItemAction 
+                ItemName="export" 
+                Property="{x:Static dxb:BarSplitButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+            <dxb:UpdateBarItemAction 
+                ItemName="email" 
+                Property="{x:Static dxb:BarSplitButtonItem.GlyphTemplateProperty}" 
+                Value="{StaticResource glyphTemplate}"/>
+        </dxb:BarManagerActionContainer>
+    </DataTemplate>
+    <ControlTemplate x:Key="{dxbt:BarContainerControlThemeKey ResourceKey=ControlTemplate}" TargetType="{x:Type dxb:BarContainerControl}">
+            <ContentControl x:Name="PART_Border" Template="{DynamicResource {dxbt:BarContainerControlThemeKey ResourceKey=EmptyBorderTemplate}}" Focusable="False" IsTabStop="False">
+                <Grid Height="30">
+                <ContentControl 
+                                x:Name="PART_Background" 
+                                Template="{TemplateBinding dxb:BarContainerControlTemplateProvider.BackgroundTemplate}" 
+                                Focusable="False" 
+                                IsTabStop="False"/>
+                <ItemsPresenter x:Name="PART_ItemsPresenter" Margin="0,1,0,-1"  />
+        </Grid>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Common">
+                <VisualState x:Name="ShowBorder" />
+                <VisualState x:Name="HideBorder" />
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        </ContentControl>
+    </ControlTemplate>
+       
+    <Style x:Key="{dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource ResourceKey={dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="GlyphMargin" Value="-2"/>
+    </Style>
+    <Style x:Key="{dxbt:BarSplitButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}" TargetType="{x:Type dxb:BarItemLayoutPanel}" BasedOn="{StaticResource {dxbt:BarButtonItemLayoutPanelThemeKey ResourceKey=StyleInBar}}">
+            <Setter Property="ArrowThemeKey" Value="{dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplate}"/>
+    </Style>
+
+
+
+</ResourceDictionary>
+    
