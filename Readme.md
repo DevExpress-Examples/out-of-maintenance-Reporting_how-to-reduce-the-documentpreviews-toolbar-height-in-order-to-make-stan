@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/ToolbarWPF/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/ToolbarWPF/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/ToolbarWPF/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/ToolbarWPF/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/ToolbarWPF/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/ToolbarWPF/MainWindow.xaml.vb))
 * [MainWindowViewModel.cs](./CS/ToolbarWPF/MainWindowViewModel.cs) (VB: [MainWindowViewModel.vb](./VB/ToolbarWPF/MainWindowViewModel.vb))
 * [ResDictionary.xaml](./CS/ToolbarWPF/ResDictionary.xaml) (VB: [ResDictionary.xaml](./VB/ToolbarWPF/ResDictionary.xaml))
 <!-- default file list end -->
